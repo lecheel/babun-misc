@@ -1,0 +1,13 @@
+#! /bin/bash
+if [ $# -eq 1 ]; then
+    if [ $1 == "fix" ]; then
+	if [ -f /c/ap/tse/g32.exe ]; then
+	    cd /c/ap/tse
+	    python tse_fix.py
+	fi
+	exit
+    fi
+fi
+if [ -f /c/ap/tse/g32.exe ]; then
+    /c/ap/tse/g32.exe $@
+fi
