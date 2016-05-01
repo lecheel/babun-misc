@@ -1,31 +1,49 @@
-[push]
-	default = matching
-[core]
-	trustctime = false
-	editor = vim
-	filemode = false
 [color]
-	ui = true
-[credential]
-	helper = cache --timeout=3600
+	ui = auto
+        branch = auto
+[alias]
+	co = checkout
+	ci = commit -a
+        sts = status
+        st = status -uno
+	br = branch
+        w = whatchanged
+	lg = log --graph --pretty=format:'%Cgreen%h%Creset -%Creset %s%C(yellow)%d %Cblue(%aN, %cr)%Creset' --abbrev-commit --date=relative
+        ref = log --all --graph --decorate --oneline --simplify-by-decoration
+        tree = log --all --graph --decorate --oneline --simplify-by-decoration
+        wd = diff --word-diff
+        lp = log -p
+	undo-commit = reset --soft HEAD^
+[user]
+	name = Lechee.Lai
+	email = lecheel@gmail.com
+[apply]
+	whitespace = fix
+    
+[diff]
+        color = auto
+        rename = copy
+#	external = gdiff_wrapper
+            
+[pager]
+        color = true
+        diff = 
+                
+[status]
+	color = auto
+
+[core]
+excludesfile = /home/lecheel/.gitignore
+	editor = /usr/bin/vim
+#	autocrlf = true
+[filter "indent"]
+	clean = indent
+    smudge = cat
+[mergetool]
+	keepBackup = true
+
+[difftool]
+#    prompt = true
 [merge]
 	tool = vimdiff
-[mergetool]
-	keeptemporaries = false
-	keepbackups = false
-	prompt = false
-	trustexitcode = false
-[alias]
-	last = log -1 --stat
-	cp = cherry-pick
-	co = checkout
-	cl = clone
-	ci = commit
-	st = status -sb
-	br = branch
-	unstage = reset HEAD --
-	dc = diff --cached
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative --all
-[user]
-	email = lecheel@gmail.com
-	name = lecheel
+
